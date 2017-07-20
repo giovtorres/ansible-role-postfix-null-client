@@ -1,6 +1,9 @@
 Ansible Role: postfix-null-client
 =================================
 
+[![Build Status](https://travis-ci.org/giovtorres/ansible-role-postfix-null-client.svg?branch=master)](https://travis-ci.org/giovtorres/ansible-role-postfix-null-client)
+[![Ansible Role](https://img.shields.io/ansible/role/19344.svg)](https://galaxy.ansible.com/giovtorres/postfix-null-client/)
+
 This role installs postfix on a [null
 client](http://www.postfix.org/STANDARD_CONFIGURATION_README.html#null_client).
 Supported on EL6 and EL7.
