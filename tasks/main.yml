@@ -1,0 +1,20 @@
+---
+- name: Install postfix.
+  package:
+    name: postfix
+    state: installed
+
+- name: Copy null-client settings template.
+  template:
+    src: main.cf.j2
+    dest: /etc/postfix/main.cf
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart postfix
+
+- name: Start postfix and enable at boottime.
+  service:
+    name: postfix
+    state: started
+    enabled: yes

@@ -1,0 +1,9 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: Install netstat for socket tests.
+      package:
+        name: net-tools
+        state: present
+  roles:
+    - ansible-role-postfix-null-client

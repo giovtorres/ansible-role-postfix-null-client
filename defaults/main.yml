@@ -1,0 +1,9 @@
+---
+postfix_myhostname: "{{ ansible_fqdn }}"
+postfix_mydomain: "{{ ansible_domain }}"
+postfix_myorigin: "$myhostname"
+postfix_relayhost: "$mydomain"
+postfix_inet_interfaces: "loopback-only"
+postfix_local_transport: "error: local delivery disabled"
+postfix_mynetworks: "127.0.0.0/8 [::1]/128"
+postfix_mynetworks_style: host
