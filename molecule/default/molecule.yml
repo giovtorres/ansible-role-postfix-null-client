@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ansible-role-postfix-null-client-centos7
+    image: centos/systemd:latest
+    privileged: true
+    command: /usr/sbin/init
+    hostname: null-client.example.com
+  - name: ansible-role-postfix-null-client-centos6
+    image: centos:6
+    privileged: true
+    hostname: null-client.example.com
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
